@@ -173,7 +173,38 @@
             navLinks.style.right = "-200px"
         }
 
+         // Fetch and display articles
+        fetch('/api/articles')
+            .then(response => response.json())
+            .then(articles => {
+                const articlesContainer = document.getElementById('articles');
+                articles.forEach(article => {
+                    const articleElement = document.createElement('div');
+                    articleElement.className = 'article';
+                    articleElement.innerHTML = `
+                        <h3>${article.title}</h3>
+                        <p>${article.content}</p>
+                        <p>By ${article.author.username}</p>
+                    `;
+                    articlesContainer.appendChild(articleElement);
+                });
+            });
 
+            // Fetch and display comments
+        fetch('/api/comments')
+            .then(response => response.json())
+            .then(comments => {
+                const commentsContainer = document.getElementById('comments');
+                comments.forEach(comment => {
+                    const commentElement = document.createElement('div');
+                    commentElement.className = 'comment';
+                    commentElement.innerHTML = `
+                        <p>${comment.content}</p>
+                        <p>By ${comment.author.username}</p>
+                    `;
+                    commentsContainer.appendChild(commentElement);
+                });
+            });
 
     </script>
 

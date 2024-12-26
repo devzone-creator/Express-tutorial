@@ -8,8 +8,9 @@ const bodyParser = require('body-parser')
 
 const app = express();
 app.use(bodyParser.json())
-//app.use(cookieParser())
+app.use(cookieParser())
 app.use(express.static('public'))
+app.set('view engine', 'ejs')
 
 mongoose.connect('mongodb://localhost:27017/Phubstorage', {
 }).then(() => {
@@ -27,6 +28,14 @@ const commentRoutes = require('./routes/comments');
 app.use('./api/auth', authRoutes);
 app.use('./api/articles', articleRoutes);
 app.use('./api/comments', commentRoutes);
+
+app.get('/register', (req, res) => {
+    res.render('register');
+})
+
+app.get('/register', (req, res) => {
+    res.render('register');
+})
 
 // Simulate a 500 error
 app.get('/error', (req, res) => {
