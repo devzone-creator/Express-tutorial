@@ -209,26 +209,26 @@ h3{
 
 /*------ contents-------*/
 
-.contents{
+#articles{
     width: 80%;
     margin: auto;
     text-align: center;
     padding-top: 100px;
 }
-.contents-col{
+#articles-col{
     flex-basis: 31%;
     border-radius: 10px;
     margin-bottom: 5%;
     text-align: left;
 }
-.contents-col img{
+#articles-col img{
     width: 100%;
     border-radius: 10px;
 }
-.contents-col p{
+#articles-col p{
     padding: 0;
 }
-.contents-col h3{
+#articles-col h3{
     margin-top: 16px;
     margin-bottom: 15px;
     text-align: left;

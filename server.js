@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const bodyParser = require('body-parser')
-//const cookieParser = require('cookies-parser')
+const cookieParser = require('cookie-parser')
 
 
 const app = express();
@@ -33,8 +33,8 @@ app.get('/register', (req, res) => {
     res.render('register');
 })
 
-app.get('/register', (req, res) => {
-    res.render('register');
+app.get('/login', (req, res) => {
+    res.render('login');
 })
 
 // Simulate a 500 error
